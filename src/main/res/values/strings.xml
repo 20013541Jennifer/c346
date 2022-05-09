@@ -1,14 +1,7 @@
 <resources>
-    <string name="app_name">Bill Please</string>
-    <string name="noSVS">No SVS</string>
-    <string name="SVS">SVS</string>
-    <string name="noGST">No GST</string>
-    <string name="GST">GST</string>
-    <string name="cash">Cash</string>
-    <string name="paynow">PayNow</string>
-    <string name="pax">Num of Pax</string>
-    <string name="split">Split</string>
-    <string name="noSplit">No Split</string>
-    <string name="reset">Reset</string>
-    <string name="noReset">No Reset</string>
+    <string name="app_name">Demo Simple Click</string>
+    <string name="message">Enter something</string>
+    <string name="show">Display what the user enters</string>
+    <string name="disabled">Disabled</string>
+    <string name="enabled">Enabled</string>
 </resources>

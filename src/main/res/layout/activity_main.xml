@@ -1,151 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewAmt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Amount" />
-
-    <EditText
-        android:id="@+id/editTextAmt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone" />
-
-    <TextView
-        android:id="@+id/textViewErrorAmt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/design_default_color_error" />
-
-    <TextView
-        android:id="@+id/textViewPax"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/pax" />
-
-    <EditText
-        android:id="@+id/editTextPax"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"/>
-
-    <TextView
-        android:id="@+id/textViewErrorPax"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/design_default_color_error" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ToggleButton
-            android:id="@+id/toggleButtonSVS"
+        <Button
+            android:id="@+id/buttonDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:checked="true"
-            android:text="ToggleButton"
-            android:textOff="@string/noSVS"
-            android:textOn="@string/SVS" />
+            android:text="Display" />
 
-        <ToggleButton
-            android:id="@+id/toggleButtonGST"
+        <EditText
+            android:id="@+id/editTextInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="ToggleButton"
-            android:textOff="@string/noGST"
-            android:textOn="@string/GST" />
-    </LinearLayout>
+            android:ems="10"
+            android:hint="@string/message"
+            android:inputType="textPersonName"
+            android:layout_weight="2" />
 
-    <TextView
-        android:id="@+id/textViewDiscount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Discount(%)" />
-
-    <EditText
-        android:id="@+id/editTextDiscount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone" />
-
-    <TextView
-        android:id="@+id/textViewErrorDisc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/design_default_color_error" />
-
-    <RadioGroup
-        android:id="@+id/radioGrpPayment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radioButtonCash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/cash" />
-
-        <RadioButton
-            android:id="@+id/radioButtonPayNow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/paynow" />
-    </RadioGroup>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ToggleButton
-            android:id="@+id/toggleButtonSplit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="ToggleButton"
-            android:textOff="@string/noSplit"
-            android:textOn="@string/split" />
-
-        <ToggleButton
-            android:id="@+id/toggleButtonReset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="ToggleButton"
-            android:textOff="@string/noReset"
-            android:textOn="@string/reset" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/textViewDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:textSize="24sp" />
+        android:text="@string/show" />
 
-    <TextView
-        android:id="@+id/textViewDisplay2"
+    <RadioGroup
+        android:id="@+id/radioGroupGender"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/radioButtonGenderMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radioButtonGenderFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
+
+    <ToggleButton
+        android:id="@+id/toggleButtonEnabled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:textSize="24sp" />
+        android:checked="true"
+        android:text="ToggleButton"
+        android:textOff="@string/disabled"
+        android:textOn="@string/enabled" />
 
 </LinearLayout>
