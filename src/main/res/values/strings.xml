@@ -1,7 +1,16 @@
 <resources>
-    <string name="app_name">Demo Simple Click</string>
-    <string name="message">Enter something</string>
-    <string name="show">Display what the user enters</string>
-    <string name="disabled">Disabled</string>
-    <string name="enabled">Enabled</string>
+    <string name="app_name">L04-Reservation</string>
+    <string name="Name">Name:</string>
+    <string name="Number">Mobile Number:</string>
+    <string name="size">Group Size:</string>
+    <string name="date">Pick a date:</string>
+    <string name="time">Pick a time:</string>
+    <string name="seating">Seating Placement:</string>
+    <string name="cbox1">Smoking area</string>
+    <string name="cbox2">Non-Smoking area</string>
+    <string name="btnReset">Reset</string>
+    <string name="btnCfm">Confirm</string>
+
+
+
 </resources>
