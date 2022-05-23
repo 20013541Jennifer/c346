@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Modules</string>
+    <string name="C346">C346 Android Programming</string>
+    <string name="C373">C373 Distributed Ledger Technology Solutioning</string>
+    <string name="C300">C300 FYP</string>
+    <string name="E001">E001 Discovering Robotics</string>
+    <string name="B001">B001 Stay Current, Share Perspectives</string>
+    <string name="back">Go Back</string>
+
+</resources>
