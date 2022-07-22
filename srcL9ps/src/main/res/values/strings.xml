@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NDPsongs</string>
+    <string name="title">Song Title</string>
+    <string name="titleIN">Enter song title here</string>
+    <string name="singer">Singers</string>
+    <string name="singerIN">Enter singers\' name here</string>
+    <string name="year">Year</string>
+    <string name="yearIN">Enter year of release here</string>
+    <string name="insert">Insert</string>
+    <string name="list">Show list</string>
+    <string name="btnView">Show all songs with 5 stars</string>
+    <string name="btnUpdate">Update</string>
+    <string name="btnDel">Delete</string>
+    <string name="btnCancel">Cancel</string>
+
+
+
+
+
+</resources>
