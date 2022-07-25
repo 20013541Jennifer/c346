@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         etYear = findViewById(R.id.etYear);
         rgStars = findViewById(R.id.rgStars);
 
+        al = new ArrayList<Song>();
+        aa = new ArrayAdapter<Song>(this,
+                android.R.layout.simple_list_item_1, al);
+
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,4 +84,13 @@ public class MainActivity extends AppCompatActivity {
         }
         return stars;
     }
+
+    /*protected void onResume() {
+        super.onResume();
+        DBHelper dbh = new DBHelper(MainActivity.this);
+        al.clear();
+        al.addAll(dbh.getAllSongs());
+        aa.notifyDataSetChanged();
+        dbh.close();
+    }*/
 }
