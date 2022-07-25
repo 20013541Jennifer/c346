@@ -12,6 +12,7 @@
     <string name="btnUpdate">Update</string>
     <string name="btnDel">Delete</string>
     <string name="btnCancel">Cancel</string>
+    <string name="id">Song ID</string>
 
 
 
