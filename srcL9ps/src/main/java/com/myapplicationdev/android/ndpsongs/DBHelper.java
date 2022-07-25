@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "ndp.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String TABLE_NOTE = "Song";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_TITLE = "title";
@@ -44,8 +44,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //db.execSQL("ALTER TABLE " + TABLE_NOTE + " ADD COLUMN  module_name TEXT ");
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTE);
+        db.execSQL("ALTER TABLE " + TABLE_NOTE + " ADD COLUMN  module_name TEXT ");       // db.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTE);
         onCreate(db);
 
     }
@@ -95,9 +94,10 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList<Song> songs = new ArrayList<Song>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-
         String[] columns = {COLUMN_ID, COLUMN_TITLE, COLUMN_SINGERS, COLUMN_YEAR, COLUMN_STARS};
-        Cursor cursor = db.query(TABLE_NOTE, columns, null, null,
+        String condition = COLUMN_STARS + " = ?";
+        String[] args = {String.valueOf(i)};
+        Cursor cursor = db.query(TABLE_NOTE, columns, condition, args,
                 null, null, null, null);
 
         if (cursor.moveToFirst()) {
@@ -120,6 +120,9 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_TITLE, data.getTitle());
+        values.put(COLUMN_SINGERS, data.getSingers());
+        values.put(COLUMN_YEAR, data.getYear());
+        values.put(COLUMN_STARS, data.getStars());
         String condition = COLUMN_ID + "= ?"; //? is substituted by a string
         String[] args = {String.valueOf(data.getId())};
         int result = db.update(TABLE_NOTE, values, condition, args);
@@ -137,34 +140,12 @@ public class DBHelper extends SQLiteOpenHelper {
         String[] args = {String.valueOf(id)};
         int result = db.delete(TABLE_NOTE, condition, args);
         if (result < 1) {
-            Log.d("DBHelper", "Update failed");
+            Log.d("DBHelper", "Delete failed");
         }
         db.close();
         return result;
     }
-
-   /* public ArrayList<Note> getAllNotes(String keyword) {
-        ArrayList<Note> notes = new ArrayList<Note>();
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        String[] columns = {COLUMN_ID, COLUMN_NOTE_CONTENT};
-        String condition = COLUMN_NOTE_CONTENT + " Like ?";
-        String[] args = {"%" + keyword + "%"};
-        Cursor cursor = db.query(TABLE_NOTE, columns, condition, args,
-                null, null, null, null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                int id = cursor.getInt(0);
-                String noteContent = cursor.getString(1);
-                Note note = new Note(id, noteContent);
-                notes.add(note);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        db.close();
-        return notes;
-    }*/
+    
 
 
 }
